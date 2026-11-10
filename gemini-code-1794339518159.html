@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jasper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        /* Purple ambient glow */
+        .glow {
+            position: absolute;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 500px;
+            background: radial-gradient(ellipse at top, rgba(90, 24, 180, 0.4) 0%, rgba(5, 5, 5, 0) 70%);
+            filter: blur(60px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism for inputs and sidebar elements */
+        .glass-element {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.2s ease;
+        }
+        .glass-element:focus-within {
+            border-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Custom underline for title */
+        .title-underline {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+        .title-underline::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body class="flex h-screen w-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-[280px] border-r border-white/10 flex flex-col justify-between hidden md:flex z-10 bg-[#0a0a0a]">
+        <div class="p-3 flex flex-col gap-4">
+            <!-- Window controls placeholder -->
+            <div class="flex items-center gap-4 text-white/40 mb-1 px-1">
+                <i data-lucide="chevron-left" class="w-4 h-4 cursor-pointer hover:text-white"></i>
+                <i data-lucide="chevron-right" class="w-4 h-4 cursor-pointer hover:text-white"></i>
+                <i data-lucide="rotate-cw" class="w-4 h-4 cursor-pointer hover:text-white"></i>
+                <i data-lucide="sidebar" class="w-
